@@ -9,38 +9,38 @@ const { LatLng, LatLngBounds } = sdkTypes;
 // `predictionPlace` (util.types.place) properties.
 const defaultLocations = [
   {
-    id: 'default-helsinki',
-    predictionPlace: {
-      address: 'Helsinki, Finland',
-      bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
+id: 'default-malmo',
+  predictionPlace: {
+    address: 'Malmö, Skåne',
+    bounds: new LatLngBounds(new LatLng(55.66933501,13.08615451), new LatLng(55.51374506,12.93272021)),
     },
   },
   {
-    id: 'default-turku',
+    id: 'default-stockholm',
     predictionPlace: {
-      address: 'Turku, Finland',
-      bounds: new LatLngBounds(new LatLng(60.53045, 22.38197), new LatLng(60.33361, 22.06644)),
+      address: 'Stockholm, Södermanland',
+      bounds: new LatLngBounds(new LatLng(59.4988979,18.26806001), new LatLng(59.16249845,17.90054401)),
     },
   },
   {
-    id: 'default-tampere',
+    id: 'default-umea',
     predictionPlace: {
-      address: 'Tampere, Finland',
-      bounds: new LatLngBounds(new LatLng(61.83657, 24.11838), new LatLng(61.42728, 23.5422)),
+      address: 'Umeå, Västerbotten',
+      bounds: new LatLngBounds(new LatLng(63.97767591,20.47000108), new LatLng(63.64188897,20.04602559)),
     },
   },
   {
-    id: 'default-oulu',
+    id: 'default-goteborg',
     predictionPlace: {
-      address: 'Oulu, Finland',
-      bounds: new LatLngBounds(new LatLng(65.56434, 26.77069), new LatLng(64.8443, 24.11494)),
+      address: 'Göteborg, Västa götaland',
+      bounds: new LatLngBounds(new LatLng(57.86999104,12.20587166), new LatLng(57.47685148,11.79617489)),
     },
   },
   {
-    id: 'default-ruka',
+    id: 'default-lulea',
     predictionPlace: {
-      address: 'Ruka, Finland',
-      bounds: new LatLngBounds(new LatLng(66.16997, 29.16773), new LatLng(66.16095, 29.13572)),
+      address: 'Luleå, Norrbotten',
+      bounds: new LatLngBounds(new LatLng(65.83730424,22.54518037), new LatLng(65.27520836,21.78818037)),
     },
   },
 ];
