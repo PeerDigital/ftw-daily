@@ -24,7 +24,7 @@ const SectionHero = props => {
           name="SearchPage"
           to={{
             search:
-              'address=Finland&bounds=70.0922932%2C31.5870999%2C59.693623%2C20.456500199999937',
+              'address=Sweden&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319',
           }}
           className={css.heroButton}
         >
