@@ -7,8 +7,15 @@ import { NotFoundPage } from './containers';
 // Otherwise, components will import form container eventually and
 // at that point css bundling / imports will happen in wrong order.
 import { NamedRedirect } from './components';
+import Northvoltpage from './containers/Northvoltpage/Northvoltpage';
 
 const pageDataLoadingAPI = getPageDataLoadingAPI();
+
+const NorthvoltPage = loadable(() =>
+  import(
+    /* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'
+  )
+);
 
 const AboutPage = loadable(() => import(/* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'));
 const AuthenticationPage = loadable(() => import(/* webpackChunkName: "AuthenticationPage" */ './containers/AuthenticationPage/AuthenticationPage'));
@@ -324,6 +331,11 @@ const routeConfiguration = () => {
       name: 'NotFoundPage',
       component: props => <NotFoundPage {...props} />,
     },
+    {
+      path: '/northvolt',
+      name: 'Northvoltpage',
+      component: Northvoltpage,
+    },
 
     // Do not change this path!
     //
@@ -344,6 +356,10 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: EmailVerificationPage,
       loadData: pageDataLoadingAPI.EmailVerificationPage.loadData,
+    
+   
+
+
     },
   ];
 };
