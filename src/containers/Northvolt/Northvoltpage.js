@@ -11,6 +11,7 @@ import {
   Button,
   PrimaryButton,
   SectionHero,
+  SectionMain,
 } from '../../components';
 
 import css from './Northvoltpage.module.css';
@@ -40,6 +41,23 @@ const NorthvoltPage = () => {
               Go to Google
             </ExternalLink>
           </div>
+
+        <div class="row">  
+          <div class="column" className={css.CompanyColumns}>   
+            <img alt="UmeaKommunOne" class="SecondLogo" src="/static/media/location_umea.ef030ce7.jpg" className={css.CompanyLogos}/>
+          </div>
+            
+            <div class="column" className={css.CompanyColumns}>   
+              <img alt="UmeaKommunTwo" src="/static/media/location_umea.ef030ce7.jpg"className={css.CompanyLogos}/>
+            </div>
+
+            <div class="column" className={css.CompanyColumns}>   
+              <img alt="UmeaKommunThree" src="/static/media/location_umea.ef030ce7.jpg"className={css.CompanyLogos}/>
+            </div>
+
+        </div>
+        
+
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
           <Footer />
@@ -50,6 +68,5 @@ const NorthvoltPage = () => {
 };
 
 export default NorthvoltPage;
-
 
 
