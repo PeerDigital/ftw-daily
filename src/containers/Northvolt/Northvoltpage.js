@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticPage, TopbarContainer } from '../../containers';
+import { StaticPage, TopbarContainer } from '..';
 import {
   LayoutSingleColumn,
   LayoutWrapperTopbar,
@@ -8,6 +8,9 @@ import {
   Footer,
   NamedLink,
   ExternalLink,
+  Button,
+  PrimaryButton,
+  SectionHero,
 } from '../../components';
 
 import css from './Northvoltpage.module.css';
@@ -29,8 +32,9 @@ const NorthvoltPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <h1>Some content</h1>
+          <h1north>Northvolt</h1north>
           <div>
+          <SectionHero className={css.heronorth}/>
             <NamedLink name="LandingPage">Go to home page</NamedLink> or
             <ExternalLink href="https://google.com">
               Go to Google
@@ -46,3 +50,6 @@ const NorthvoltPage = () => {
 };
 
 export default NorthvoltPage;
+
+
+

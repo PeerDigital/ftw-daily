@@ -1,0 +1,57 @@
+/**
+ * Import custom media queries for the new page.
+ * FTW-template use route-based code-splitting, every page create their own CSS files.
+ * This import ensures that the page and components inside will get correct media queries,
+ * when the app is build.
+ */
+ @import '../../styles/customMediaQueries.css';
+ 
+ .root {
+   padding: 0px;
+ 
+   /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
+   background-color: rgb(0, 0, 0);
+ }
+
+
+ h1north {
+  font-weight: var(--fontWeightBold);
+  font-size: 70px;
+  line-height: 36px;
+  letter-spacing: -0.7px;
+  margin-top: 25px;
+  margin-bottom: 14px;
+  padding-left: 80px;
+  padding-top: 100px;
+  color:white;
+}
+
+
+.heronorthContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  height: 67.5vh;
+  max-height: 600px;
+  padding: 0;
+
+  @media (--viewportMedium) {
+    min-height: 500px;
+    height: 70vh;
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    max-height: 800px;
+    min-height: 600px;
+    height: calc(70vh - var(--topbarHeightDesktop));
+  }
+}
+
+.heronorth {
+  background-size: cover;
+  background-position: center center;
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding-bottom: 32px;
+}
