@@ -39,6 +39,45 @@ h3north {
   
 }
 
-img {
-  width: 100%;
+button1 {
+  position: absolute;
+  margin-top: 500px !important;
+  margin-left: 80px !important;
+  background-color:rgb(64, 112, 136);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background:rgb(64, 112, 136);
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.0rem;
+  font-weight: 600;
+  letter-spacing: .0333em;
+  line-height: 1.0;
+  margin: 0;
+  opacity: 1;
+  padding: 1.1em 1.44em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: opacity .1s linear;
+  font-family: 'poppins', Helvetica, Arial, sans-serif;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+button1:hover {
+background: rgb(34, 33, 33);
+color:white;
+font-family: 'poppins', Helvetica, Arial, sans-serif;
+font-weight: var(--fontWeightSemiBold);
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.2px;
+transition: .1s linear;
+
 }

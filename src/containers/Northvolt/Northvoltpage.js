@@ -11,6 +11,7 @@ import {
   Button,
   PrimaryButton,
   SectionHero,
+  Formattedmessage,
 } from '../../components';
 
 import css from './Northvoltpage.module.css';
@@ -33,18 +34,20 @@ const NorthvoltPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
+        <NamedLink name="SearchPage">
+           <button1 type="button" > Se uppdrag</button1>
+          
+           
+        
+        </NamedLink>
+            
           <div>
-          <h1north>Northvolt</h1north> 
-         <h3north>subheading</h3north>
-         <p>paragraf</p>
+          <h1north>Northvolt</h1north>
+         <h3north>subheading</h3north>   
          <img src={image} alt="tomtebohero" />
 
-
-      
-            <NamedLink name="LandingPage">Go to home page</NamedLink> or
-            <ExternalLink href="https://google.com">
-              Go to Google
-            </ExternalLink>
+         
+            
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -56,6 +59,3 @@ const NorthvoltPage = () => {
 };
 
 export default NorthvoltPage;
-
-
-
