@@ -14,6 +14,7 @@ import {
 } from '../../components';
 
 import css from './Northvoltpage.module.css';
+import image from '/Users/adamfalkenberg/Documents/GitHub/ftw-daily/src/assets/background-1440 (old).jpg'; 
 
 const NorthvoltPage = () => {
   return (
@@ -32,9 +33,14 @@ const NorthvoltPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <h1north>Northvolt</h1north>
           <div>
-          <SectionHero className={css.heronorth}/>
+          <h1north>Northvolt</h1north> 
+         <h3north>subheading</h3north>
+         <p>paragraf</p>
+         <img src={image} alt="tomtebohero" />
+
+
+      
             <NamedLink name="LandingPage">Go to home page</NamedLink> or
             <ExternalLink href="https://google.com">
               Go to Google
