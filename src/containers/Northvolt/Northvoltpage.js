@@ -12,6 +12,7 @@ import {
   PrimaryButton,
   SectionHero,
   SectionMain,
+
 } from '../../components';
 
 import css from './Northvoltpage.module.css';
@@ -21,6 +22,7 @@ import LogoUmeaKommun from './images/company_umea.d81d3afd.png';
 
 const NorthvoltPage = () => {
   return (
+    
     <StaticPage
       className={css.root}
       title="Northvolt"
@@ -29,15 +31,26 @@ const NorthvoltPage = () => {
         '@type': 'AboutPage',
         description: 'Description of this page',
         name: 'About page',
+      
       }}
-    >
+      >
+    
       <LayoutSingleColumn>
         <LayoutWrapperTopbar>
           <TopbarContainer />
         </LayoutWrapperTopbar>
+       
+
+       
         <LayoutWrapperMain>
+        <container className={css.bodyfull}>     
+
+
+          
+       
         <NamedLink name="SearchPage">
            <button1 type="button" > Se uppdrag</button1>
+           
           
            
         
@@ -46,7 +59,7 @@ const NorthvoltPage = () => {
           <div>
           <h1north>Tomtebo strand</h1north>
          <h3north>Ta del av jobb på detta projekt</h3north>   
-         <img src={bannerimage} alt="tomtebohero" />
+         <img src={bannerimage} alt="tomtebohero" className={css.bannerimage1} />
 
          
             
@@ -67,8 +80,10 @@ const NorthvoltPage = () => {
 
         </div>
         
-
+  
+        </container>
         </LayoutWrapperMain>
+       
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>

@@ -8,6 +8,7 @@
  
  .root {
    padding: 0px;
+
  
    /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
    background-color: rgb(0, 0, 0);
@@ -81,13 +82,7 @@ letter-spacing: 0.2px;
 transition: .1s linear;
 
 }
-.heronorth {
-  background-size: cover;
-  background-position: center center;
-  flex-grow: 1;
-  justify-content: flex-end;
-  padding-bottom: 32px;
-}
+
 
 .CompanyLogos {
   display: block;
@@ -102,3 +97,14 @@ transition: .1s linear;
   width: 33.33%;
 }
 
+
+.bodyfull {
+ 
+  
+}
+
+.bannerimage1 {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+}
