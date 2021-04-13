@@ -52,7 +52,7 @@ const NorthvoltPage = () => {
 
         <div class="row">  
           <div class="column" className={css.CompanyColumns}>   
-            <img alt="LogoUmeaKommun" class="LogoUmeaKommun" src="/static/media/company_umea.d81d3afd.png" className={css.LogoUmeaKommun}/>
+            <img alt="LogoUmeaKommun" class="LogoUmeaKommun" src={LogoUmeaKommun} className={css.LogoUmeaKommun}/>
           </div>
             
             <div class="column" className={css.CompanyColumns}>   
