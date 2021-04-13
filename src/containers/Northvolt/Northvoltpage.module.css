@@ -93,11 +93,11 @@ transition: .1s linear;
   display: block;
   width: 100%;
   padding: 20px;
-  margin : 10px;
+  margin : 30px;
 }
 
 .CompanyColumns {
-  display: inline block;
+  display: block;
   float: left;
   width: 33.33%;
 }
