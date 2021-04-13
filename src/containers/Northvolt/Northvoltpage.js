@@ -15,7 +15,9 @@ import {
 } from '../../components';
 
 import css from './Northvoltpage.module.css';
-import LogoUmeaKommun from './images/company_umea.d81d3afd.png';
+import bannerimage from './images/background-1440.jpg'; 
+import LogoUmeaKommun from './images/company_umea.d81d3afd.png'; 
+
 
 const NorthvoltPage = () => {
   return (
@@ -44,7 +46,7 @@ const NorthvoltPage = () => {
           <div>
           <h1north>Northvolt</h1north>
          <h3north>subheading</h3north>   
-         
+         <img src={bannerimage} alt="tomtebohero" />
 
          
             
