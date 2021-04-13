@@ -16,6 +16,8 @@ import {
 
 import css from './Northvoltpage.module.css';
 import bannerimage from './images/background-1440.jpg'; 
+import LogoUmeaKommun from './images/company_umea.d81d3afd.png'; 
+
 
 const NorthvoltPage = () => {
   return (
@@ -52,7 +54,7 @@ const NorthvoltPage = () => {
 
         <div class="row">  
           <div class="column" className={css.CompanyColumns}>   
-            <img alt="UmeaKommunOne" class="SecondLogo" src="/static/media/location_umea.ef030ce7.jpg" className={css.CompanyLogos}/>
+            <img alt="LogoUmeaKommun" class="LogoUmeaKommun" src={LogoUmeaKommun} className={css.LogoUmeaKommun}/>
           </div>
             
             <div class="column" className={css.CompanyColumns}>   
