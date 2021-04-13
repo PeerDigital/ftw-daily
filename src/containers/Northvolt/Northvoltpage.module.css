@@ -26,6 +26,7 @@
   padding-left: 80px;
   padding-top: 100px;
   color:white;
+  min-width: 400px;
 }
 
 
@@ -101,6 +102,18 @@ transition: .1s linear;
 }
 
 .LogoUmeaKommun {
+  max-height: 150px;
+  max-width: 250px;
+  width: 90%;
+  filter: grayscale(100%);
+}
+.LogoRikshem {
+  max-height: 150px;
+  max-width: 250px;
+  width: 90%;
+  filter: grayscale(100%);
+}
+.LogoSkanska {
   max-height: 150px;
   max-width: 250px;
   width: 90%;
