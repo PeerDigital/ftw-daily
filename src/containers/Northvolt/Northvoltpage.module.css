@@ -89,16 +89,39 @@ transition: .1s linear;
   padding-bottom: 32px;
 }
 
-.CompanyLogos {
-  display: block;
-  width: 100%;
-  padding: 20px;
-  margin : 30px;
+.ProjectLogos {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .CompanyColumns {
-  display: block;
   float: left;
   width: 33.33%;
+  padding: 20px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.LogoUmeaKommun {
+  max-height: 150px;
+  max-width: 250px;
+  width: 90%;
+  filter: grayscale(100%);
+}
+
+.LogoRikshem {
+  max-height: 150px;
+  max-width: 250px;
+  width: 90%;
+  filter: grayscale(100%);
+}
+
+.LogoSkanska {
+  max-height: 150px;
+  max-width: 250px;
+  width: 90%;
+  filter: grayscale(100%);
+}
