@@ -42,8 +42,8 @@ const NorthvoltPage = () => {
         </NamedLink>
             
           <div>
-          <h1north>Northvolt</h1north>
-         <h3north>subheading</h3north>   
+          <h1north>Tomtebo strand</h1north>
+         <h3north>Ta del av jobb på detta projekt</h3north>   
          <img src={bannerimage} alt="tomtebohero" />
 
          
