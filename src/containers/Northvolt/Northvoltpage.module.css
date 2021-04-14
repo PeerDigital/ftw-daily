@@ -90,13 +90,13 @@ transition: .1s linear;
   padding-bottom: 32px;
 }
 
-.ProjectLogos {
+.ColumnContainer {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.CompanyColumns {
+.ThreeColumns {
   float: left;
   width: 33.33%;
   padding: 20px;
@@ -141,4 +141,14 @@ transition: .1s linear;
   max-width: 250px;
   width: 90%;
   filter: grayscale(100%);
+}
+
+.TwoColumns {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
