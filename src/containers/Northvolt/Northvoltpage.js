@@ -42,31 +42,31 @@ const NorthvoltPage = () => {
         <LayoutWrapperTopbar>
           <TopbarContainer />
         </LayoutWrapperTopbar>
-       
+        
 
        
         <LayoutWrapperMain>
+  
         <container className={css.bodyfull}>     
-
-
+        <img src={bannerimage} alt="tomtebohero" className={css.bannerimage1} />
+      
+    
+          <div class="container" className={css.bannertext}>
           
-       
-        <NamedLink name="SearchPage">
-           <button1 type="button" > Se uppdrag</button1>
-           
-          
-           
-        
-        </NamedLink>
-            
-          <div>
           <h1north>Tomtebo strand</h1north>
-         <h3north>Ta del av jobb på detta projekt</h3north>   
-         <img src={bannerimage} alt="tomtebohero" className={css.bannerimage1} />
-
+          
+          <div>
+          <h3north>Ta del av jobb på detta projekt</h3north>   
          
-            
-          </div>
+         </div>
+
+         <NamedLink name="SearchPage">
+           <button1 type="button" > Se uppdrag</button1>
+        </NamedLink>
+        </div>
+       
+      
+        </container>
 
         <div class="row">  
         <div class="container" className={css.ProjectLogos}>
@@ -85,7 +85,7 @@ const NorthvoltPage = () => {
         </div>
         
   
-        </container>
+        
         </LayoutWrapperMain>
        
         <LayoutWrapperFooter>
