@@ -50,25 +50,36 @@ const NorthvoltPage = () => {
 
        
         <LayoutWrapperMain>
-  
+      
         <container className={css.bodyfull}>     
         <img src={bannerimage} alt="tomtebohero" className={css.bannerimage1} />
-      
-    
-          <div class="container" className={css.bannertext}>
+       
+        
+ 
+        <div class="container" className={css.bannertext}>
           
-          <h1north>Tomtebo strand</h1north>
-          
-          <div>
-          <h3north>Ta del av jobb på detta projekt</h3north>   
-         
-         </div>
+       
+        <div class="row">
+        <div class="container" className={css.ColumncontainerBanner}> 
+          <div class="column" className={css.TwoColumnsBanner}>
+             <h1north>Tomtebo strand</h1north>
+            <div>
+                <h3north>Ta del av jobb på detta projekt</h3north>           
+                   </div>
+                   </div> 
+  
+          <div class="column">
 
+    
          <NamedLink name="SearchPage">
            <button1 type="button" > Se uppdrag</button1>
         </NamedLink>
         </div>
-       
+        </div>
+        
+        
+        </div>
+        </div>
       
         </container>
       <section>
