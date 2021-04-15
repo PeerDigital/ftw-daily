@@ -13,14 +13,18 @@ import {
   SectionHero,
   SectionMain,
   Map,
-
 } from '../../components';
-//<Map>center={71.540,66.885}, obfuscatedCenter={true}, zoom:={3}</Map>
+
+import { StaticMap, DynamicMap, isMapsLibLoaded } from '../../components/Map/MapboxMap';
+
+
 import css from './Northvoltpage.module.css';
 import bannerimage from './images/background-1440.jpg'; 
 import LogoUmeaKommun from './images/company_umea.d81d3afd.png'; 
 import LogoRikshem from './images/rikshem.png'; 
-import LogoSkanska from './images/skanska.png'; 
+import LogoSkanska from './images/skanska.png';
+import TomteboStrand from './images/TomteboStrand.png'; 
+
 
 
 
@@ -35,7 +39,6 @@ const NorthvoltPage = () => {
         '@type': 'AboutPage',
         description: 'Description of this page',
         name: 'About page',
-      
       }}
       >
     
@@ -68,7 +71,7 @@ const NorthvoltPage = () => {
        
       
         </container>
-
+      <section>
         <div class="row">  
         <div class="container" className={css.ColumnContainer}>
           <div class="column" className={css.ThreeColumns}>   
@@ -84,20 +87,53 @@ const NorthvoltPage = () => {
             </div>
         </div>
         </div>
-
+      </section>
+      <section>
         <div class="row">  
         <div class="container" className={css.ColumnContainer}>
-          <div class="column" className={css.TwoColumns}>   
-            <img alt="LogoUmeaKommun" class="LogoUmeaKommun" src={LogoUmeaKommun} className={css.LogoUmeaKommun}/>
+          <div class="column" className={css.TwoColumns}>
+            <img alt="TomteboStrand" class="TomteboStrand" src={TomteboStrand} className={css.TomteboStrand}/>   
           </div>
             
             <div class="column" className={css.TwoColumns}>   
-              <img alt="LogoRikshem" class="LogoRikshem" src={LogoRikshem} className={css.LogoRikshem}/>
+              <div class="container" className={css.ProjectData}>
+              <table id="status">
+                <tr>
+                  <th>Company</th>
+                  <th>Contact</th>
+                </tr>
+                <tr>
+                  <td>Alfreds Futterkiste</td>
+                  <td>Maria Anders</td>
+                </tr>
+                <tr>
+                  <td>Berglunds snabbköp</td>
+                  <td>Christina Berglund</td>
+                </tr>
+                <tr>
+                  <td>Centro comercial Moctezuma</td>
+                  <td>Francisco Chang</td>
+                </tr>
+                <tr>
+                  <td>Ernst Handel</td>
+                  <td>Roland Mendel</td>
+                </tr>
+                <tr>
+                  <td>Island Trading</td>
+                  <td>Helen Bennett</td>
+                </tr>
+                <tr>
+                  <td>Königlich Essen</td>
+                  <td>Philip Cramer</td>
+                </tr>
+              </table>
+              </div>
             </div>
         </div>
         </div>
+      </section>
+
         
-  
         
         </LayoutWrapperMain>
        

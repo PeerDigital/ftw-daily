@@ -155,8 +155,27 @@ transition: .1s linear;
   float: left;
   width: 50%;
   padding: 20px;
-  height: 250px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ProjectMap {
+  display: block;
+}
+
+.TomteboStrand {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ProjectData {
+  text-align: left;
+}
+
+#status {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
