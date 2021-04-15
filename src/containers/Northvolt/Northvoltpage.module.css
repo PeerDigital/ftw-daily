@@ -253,10 +253,12 @@ transition: .1s linear;
   float: left;
   width: 50%;
   padding: 20px;
-  height: 500px;
+  margin-bottom: 100px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .ProjectMap {
@@ -299,4 +301,37 @@ transition: .1s linear;
   }
 }
 
+  table {
+    color: white;
+    border-color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    position:relative;
+  }
+
+  th, td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+  
+th {
+  font-size: 30px;
+}
+
+.TwoColumns {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .TwoColumns {
+    width: 100%;
+  }
+}
+
+
+p {
+  color:white;
+}
 
