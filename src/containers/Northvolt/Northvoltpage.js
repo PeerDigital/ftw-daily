@@ -63,7 +63,7 @@ const NorthvoltPage = () => {
               <h3north>Ta del av jobb på detta projekt</h3north>           
             </div>
             <NamedLink name="SearchPage">
-              <button1 type="button" > Se uppdrag </button1>
+              <button1 type="button" > Se uppdrag</button1>
             </NamedLink>
           </div> 
         </div>
@@ -73,6 +73,76 @@ const NorthvoltPage = () => {
         </div>
       
         </container>
+     
+      <section>
+        <div class="row">  
+        <div class="container" className={css.ColumnContainer}>
+          <div class="column" className={css.TwoColumns}>
+            <img alt="TomteboStrand" class="TomteboStrand" src={TomteboStrand} className={css.TomteboStrand}/>   
+          </div>
+            
+            <div class="column" className={css.TwoColumns}>   
+              <div class="container" className={css.ProjectData}>
+              <table id="details">
+                <tr>
+                  <th>Tomtebo Strand</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>Projektstatus :</td>
+                  <td>Planeringsfas</td>
+                </tr>
+                <tr>
+                  <td> Budget för projekt :</td>
+                  <td>400mkr</td>
+                </tr>
+                <tr>
+                  <td>Projektperiod :</td>
+                  <td>2021/01 - 2023/02</td>
+                </tr>
+                <tr>
+                  <td>Lokalfaktor :</td>
+                  <td>Hög</td>
+                </tr>
+                <tr>
+                  <td>Hållbarhetsfaktor :</td>
+                  <td>Hög</td>
+                </tr>
+                <tr>
+                  <td>Plats :</td>
+                  <td>Västerbotten, Umeå</td>
+                </tr>
+              </table>
+              </div>
+            </div>
+        </div>
+        </div>
+      </section>
+
+      <div class="row">
+      <div class="container" className={css.bannertext}>
+          <div class="column" className={css.TwoColumnsBanner}>
+             <h1north> Om projektet</h1north>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id suscipit massa. Duis mollis felis at tincidunt venenatis. Vivamus semper finibus arcu, eu pulvinar augue facilisis ut. Donec id sapien purus. In hac habitasse platea dictumst. Aliquam accumsan eget orci sed porta. Nullam nec lacus pellentesque, placerat ante sit amet, tristique nisi.</p>           
+                   </div>
+                   </div> 
+  
+          <div class="column" clasName={css.Columncontact}>
+          <h3north>Kontakt</h3north> 
+      
+        </div>
+        </div>
+        
+        
+        </div>
+
+
+
+
+
+
+
       <section>
         <div class="row">  
         <div class="container" className={css.ColumnContainer}>
@@ -90,51 +160,6 @@ const NorthvoltPage = () => {
         </div>
         </div>
       </section>
-      <section>
-        <div class="row">  
-        <div class="container" className={css.ColumnContainer}>
-          <div class="column" className={css.TwoColumns}>
-            <img alt="TomteboStrand" class="TomteboStrand" src={TomteboStrand} className={css.TomteboStrand}/>   
-          </div>
-            
-            <div class="column" className={css.TwoColumns}>   
-              <div class="container" className={css.ProjectData}>
-              <table id="status">
-                <tr>
-                  <th>Company</th>
-                  <th>Contact</th>
-                </tr>
-                <tr>
-                  <td>Alfreds Futterkiste</td>
-                  <td>Maria Anders</td>
-                </tr>
-                <tr>
-                  <td>Berglunds snabbköp</td>
-                  <td>Christina Berglund</td>
-                </tr>
-                <tr>
-                  <td>Centro comercial Moctezuma</td>
-                  <td>Francisco Chang</td>
-                </tr>
-                <tr>
-                  <td>Ernst Handel</td>
-                  <td>Roland Mendel</td>
-                </tr>
-                <tr>
-                  <td>Island Trading</td>
-                  <td>Helen Bennett</td>
-                </tr>
-                <tr>
-                  <td>Königlich Essen</td>
-                  <td>Philip Cramer</td>
-                </tr>
-              </table>
-              </div>
-            </div>
-        </div>
-        </div>
-      </section>
-
         
         
         </LayoutWrapperMain>
