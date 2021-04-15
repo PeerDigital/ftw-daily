@@ -14,34 +14,56 @@
    background-color: rgb(0, 0, 0);
  }
 
+ /* Animation for the hero elements */
+
+@keyframes SectionHero_animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Shared animation rules */
+
+.SectionHero_animation__3or2Z {
+  animation-name: SectionHero_animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
 
  h1north {
-  position: relative; 
   font-weight: var(--fontWeightBold);
   font-size: 60px;
   line-height: 50px;
   letter-spacing: -0.7px;
   color:white;
   width: auto;
+  animation-name: SectionHero_animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-delay: 500ms;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
   
 }
-  
-
-@keyframes slidein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-    0%   {top: 0px;}
-    100% {top: 600px;}
-  }
-
-
-
-
 
 @media only screen and (max-width: 700px) {
   h1north {
     font-size: 40px;
-  
   }
 }
 
@@ -50,7 +72,16 @@
 h3north {
   position: relative;
   font-size: 25px;
-  color: white;  
+  color: white;
+  animation-name: SectionHero_animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-delay: 650ms;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
 }
 
 
@@ -71,27 +102,8 @@ h3north {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  animation: slidein 1s ease-in
-  
 
   
-}
-
-
-@media only screen and (min-width: 1000px) {
-  .bannertext {
-    margin-bottom: 400px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .bannertext {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 200px;
-    position: static;
-    
-  }
 }
 
 button1 {
@@ -109,30 +121,39 @@ button1 {
   opacity: 1;
   padding: 17px 17px;
   text-align: center;
-  transition: opacity .1s linear;
   font-family: 'poppins', Helvetica, Arial, sans-serif;
   font-weight: var(--fontWeightSemiBold);
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.2px;
   align-self: center;
+  animation-name: SectionHero_animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-delay: 800ms;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
   
 }
 
 @media only screen and (min-width: 600px) {
-  button1 {
-    margin-left: auto;
-    margin-right: auto;
-    float: right;
-    
-    
+  .bannertext {
+    margin-bottom: 400px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   button1 {
     width: 100%;
-    
+  }
+  .bannertext {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 200px;
+    position: static;
     
   }
 }

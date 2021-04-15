@@ -12,11 +12,7 @@ import {
   PrimaryButton,
   SectionHero,
   SectionMain,
-  Map,
 } from '../../components';
-
-import { StaticMap, DynamicMap, isMapsLibLoaded } from '../../components/Map/MapboxMap';
-
 
 import css from './Northvoltpage.module.css';
 import bannerimage from './images/background-1440.jpg'; 
@@ -64,17 +60,12 @@ const NorthvoltPage = () => {
           <div class="column" className={css.TwoColumnsBanner}>
              <h1north>Tomtebo strand</h1north>
             <div>
-                <h3north>Ta del av jobb på detta projekt</h3north>           
-                   </div>
-                   </div> 
-  
-          <div class="column">
-
-    
-         <NamedLink name="SearchPage">
-           <button1 type="button" > Se uppdrag</button1>
-        </NamedLink>
-        </div>
+              <h3north>Ta del av jobb på detta projekt</h3north>           
+            </div>
+            <NamedLink name="SearchPage">
+              <button1 type="button" > Se uppdrag</button1>
+            </NamedLink>
+          </div> 
         </div>
         
         
