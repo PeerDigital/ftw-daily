@@ -72,20 +72,22 @@ const NorthvoltPage = () => {
         </div>
       
         </container>
-     
+       
       <section>
         <div class="row">  
         <div class="container" className={css.ColumnContainer}>
           <div class="column" className={css.TwoColumns}>
             <img alt="TomteboStrand" class="TomteboStrand" src={TomteboStrand} className={css.TomteboStrand}/>   
+          
+          
           </div>
-            
+
             <div class="column" className={css.TwoColumns}>   
               <div class="container" className={css.ProjectData}>
               <table id="details">
                 <tr>
-                  <th>Tomtebo Strand</th>
-                  <th></th>
+                <th colspan="2">Tomtebo Strand</th>
+             
                 </tr>
                 <tr>
                   <td>Projektstatus :</td>
@@ -119,8 +121,8 @@ const NorthvoltPage = () => {
       </section>
 
       <div class="row">
-      <div class="container" className={css.bannertext}>
-          <div class="column" className={css.TwoColumnsBanner}>
+      <div class="container" className={css.Containercontact}>
+          <div class="column" className={css.TwoColumnscontact}>
              <h1north> Om projektet</h1north>
             <div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id suscipit massa. Duis mollis felis at tincidunt venenatis. Vivamus semper finibus arcu, eu pulvinar augue facilisis ut. Donec id sapien purus. In hac habitasse platea dictumst. Aliquam accumsan eget orci sed porta. Nullam nec lacus pellentesque, placerat ante sit amet, tristique nisi.</p>           
@@ -128,13 +130,17 @@ const NorthvoltPage = () => {
                    </div> 
   
           <div class="column" clasName={css.Columncontact}>
+          
           <h3north>Kontakt</h3north> 
-      
+          <p>Namn Efternamn</p>
+          <p>namn@företag.se</p>
+          <p>073 XXX XX XX</p>
+          </div>
         </div>
         </div>
         
         
-        </div>
+    
 
 
 
@@ -144,7 +150,7 @@ const NorthvoltPage = () => {
 
       <section>
         <div class="row">  
-        <div class="container" className={css.ColumnContainer}>
+        <div class="container" className={css.Containercontact}>
           <div class="column" className={css.ThreeColumns}>   
             <img alt="LogoUmeaKommun" class="LogoUmeaKommun" src={LogoUmeaKommun} className={css.LogoUmeaKommun}/>
           </div>

@@ -210,12 +210,15 @@ transition: .1s linear;
   margin-right: auto;
   padding-left: 80px;
   padding-right: 80px;
+  
 
 }
 @media only screen and (max-width: 600px) {
   .ColumnContainer {
     padding-left: 24px;
     padding-right: 24px;
+    display: flex;
+  flex-direction: column-reverse;
   }
 }
 
@@ -323,16 +326,20 @@ transition: .1s linear;
 }
   
 th {
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .TwoColumns {
   width: 50%;
+ 
 }
 
 @media only screen and (max-width: 600px) {
-  .TwoColumns {
+.TwoColumns {
     width: 100%;
+    display: flex !important;
+    flex-direction:column-reverse !important;
+  
   }
 }
 
@@ -341,4 +348,15 @@ p {
   color:white;
 }
 
+.p1 {
+  color:white;
+}
 
+.Containercontact {
+  line-height: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
