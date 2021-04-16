@@ -62,9 +62,10 @@ const NorthvoltPage = () => {
             <div>
               <h3north>Ta del av jobb på detta projekt</h3north>           
             </div>
-            <NamedLink name="SearchPage">
-              <button1 type="button" > Se uppdrag</button1>
-            </NamedLink>
+
+              <a class="SectionHero_heroButton__1Am0q SectionHero_animation__3or2Z" href="/s?address=Sweden&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&keywords=tomtebo-strand">
+                <span>Se uppdrag</span></a>
+
           </div> 
         </div>
         
