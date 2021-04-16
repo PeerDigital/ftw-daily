@@ -56,8 +56,7 @@ const NorthvoltPage = () => {
           
        
         <div class="row">
-        <div class="container" className={css.ColumncontainerBanner}> 
-          <div class="column" className={css.TwoColumnsBanner}>
+        <div class="container" className={css.ColumnContainerBanner}> 
              <h1north>Tomtebo strand</h1north>
             <div>
               <h3north>Ta del av jobb på detta projekt</h3north>           
@@ -66,7 +65,6 @@ const NorthvoltPage = () => {
               <a class="SectionHero_heroButton__1Am0q SectionHero_animation__3or2Z" href="/s?address=Sweden&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&keywords=Tomtebo%20Strand">
                 <span>Se uppdrag</span></a>
 
-          </div> 
         </div>
         
         

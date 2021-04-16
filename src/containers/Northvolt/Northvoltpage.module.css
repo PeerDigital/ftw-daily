@@ -61,7 +61,7 @@
   
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
   h1north {
     font-size: 40px;
   }
@@ -85,7 +85,7 @@ h3north {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
   h3north {
     font-size: 15px;
    
@@ -94,16 +94,22 @@ h3north {
 /* Container of banner header, subheading and CTA */
 .bannertext {
   vertical-align: middle;
-  padding-left: 80px;
-  padding-right: 80px;
-  margin-top: 200px;
+  padding-left: 100px;
+  padding-right: 100px;
   line-height: 40px;
-  margin-bottom: 75px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-
+  height: 62vh;
+  position: relative;
+  bottom: 34px;
   
+}
+
+.ColumnContainerBanner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button1 {
@@ -141,20 +147,31 @@ button1 {
 
 @media only screen and (min-width: 600px) {
   .bannertext {
-    margin-bottom: 400px;
+    padding-top: 400px;
+
   }
 }
 
 @media only screen and (max-width: 600px) {
-  button1 {
+  .HeroButton {
     width: 100%;
   }
+}
+
+@media only screen and (max-width: 600px) {
+
   .bannertext {
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 200px;
-    position: static;
+    min-height: 73vh;
     
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .ColumnContainerBanner {
+    padding-top: 600px;
   }
 }
 
@@ -174,9 +191,8 @@ transition: .1s linear;
 .bannerimage1 {
   position: absolute;
   width: 100%;
-  max-height: 60vh;
+  height: 62vh;
   object-fit: cover;
-  min-height: 55vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -278,16 +294,6 @@ transition: .1s linear;
 #status {
   border: 1px solid #ddd;
   padding: 8px;
-}
-
-
-.ColumnContainerBanner {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 80px;
-  padding-right: 80px;
-
 }
 
 
