@@ -87,7 +87,7 @@ h3north {
 
 @media only screen and (max-width: 600px) {
   h3north {
-    font-size: 15px;
+    font-size: 20px;
    
   }
 }
@@ -161,12 +161,13 @@ button1 {
 @media only screen and (max-width: 600px) {
 
   .bannertext {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 24px;
+    padding-right: 24px;
     min-height: 73vh;
     
   }
 }
+
 
 @media only screen and (max-width: 600px) {
 
@@ -230,6 +231,9 @@ transition: .1s linear;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+
 }
 
 .LogoUmeaKommun {
@@ -272,7 +276,7 @@ transition: .1s linear;
   float: left;
   width: 50%;
   padding: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 15px;
   height: 400px;
   display: flex;
   justify-content: center;
@@ -344,19 +348,49 @@ th {
 }
 
 
-p {
-  color:white;
-}
-
-.p1 {
-  color:white;
-}
 
 .Containercontact {
-  line-height: 20px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .Containercontact {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+
+
+.TwoColumnscontact {
+  color:white;
+  animation-name: SectionHero_animationTitle;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  line-height: 20px;
+  margin-top: 125px;  
+  margin-bottom: 125px;
+  
+  
+}
+@media only screen and (max-width: 600px) {
+  .TwoColumnscontact {
+    margin-top: 30px;
+    margin-bottom: 30px;  
+  }
+}
+
+.contactinformation {
+  color: white;
+  animation-name: SectionHero_animationTitle;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  margin-top: 30px;
+}
+
