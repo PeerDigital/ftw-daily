@@ -85,16 +85,16 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'snickare', label: 'Snickare' },
-        { key: 'rörmokare', label: 'Rörmokare' },
-        { key: 'elektriker', label: 'Elektriker' },
-        { key: 'malare', label: 'Målare' },
+        { key: 'smoke', label: 'Smoke' },
+        { key: 'electric', label: 'Electric' },
+        { key: 'wood', label: 'Wood' },
+        { key: 'other', label: 'Other' },
       ],
     },
   },
   {
     id: 'amenities',
-    label: 'Tjänstetyper',
+    label: 'Amenities',
     type: 'SelectMultipleFilter',
     group: 'secondary',
     queryParamNames: ['pub_amenities'],
@@ -109,36 +109,36 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         {
-          key: 'kok',
-          label: 'Kök',
+          key: 'towels',
+          label: 'Towels',
         },
         {
-          key: 'badrum',
-          label: 'Badrum',
+          key: 'bathroom',
+          label: 'Bathroom',
         },
         {
-          key: 'sovrum',
-          label: 'Sovrum',
+          key: 'swimming_pool',
+          label: 'Swimming pool',
         },
         {
-          key: 'hall',
-          label: 'Hall',
+          key: 'own_drinks',
+          label: 'Own drinks allowed',
         },
         {
-          key: 'kontor',
-          label: 'Kontor',
+          key: 'jacuzzi',
+          label: 'Jacuzzi',
         },
         {
-          key: 'kallare',
-          label: 'Källare',
+          key: 'audiovisual_entertainment',
+          label: 'Audiovisual entertainment',
         },
         {
-          key: 'utsida',
-          label: 'Utsida',
+          key: 'barbeque',
+          label: 'Barbeque',
         },
         {
-          key: 'ovrigt',
-          label: 'Övrigt',
+          key: 'own_food_allowed',
+          label: 'Own food allowed',
         },
       ],
     },

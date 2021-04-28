@@ -24,7 +24,7 @@ import EditListingWizardTab, {
   FEATURES,
   POLICY,
   LOCATION,
-  //PRICING,
+  PRICING,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
@@ -41,7 +41,7 @@ export const TABS = [
   FEATURES,
   POLICY,
   LOCATION,
-  //PRICING,
+  PRICING,
   ...availabilityMaybe,
   PHOTOS,
 ];
@@ -62,10 +62,9 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
-  } //else if (tab === PRICING) {
-    //key = 'EditListingWizard.tabLabelPricing';
-  //} 
-  else if (tab === AVAILABILITY) {
+  } else if (tab === PRICING) {
+    key = 'EditListingWizard.tabLabelPricing';
+  } else if (tab === AVAILABILITY) {
     key = 'EditListingWizard.tabLabelAvailability';
   } else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
@@ -102,8 +101,8 @@ const tabCompleted = (tab, listing) => {
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
-   // case PRICING:
-    //  return !!price;
+    case PRICING:
+      return !!price;
     case AVAILABILITY:
       return !!availabilityPlan;
     case PHOTOS:
@@ -213,28 +212,28 @@ class EditListingWizard extends Component {
     this.hasScrolledToTab = shouldScroll;
   }
 
-  // handlePublishListing(id) {
-   //  const { onPublishListingDraft, currentUser, stripeAccount } = this.props;
+  handlePublishListing(id) {
+    const { onPublishListingDraft, currentUser, stripeAccount } = this.props;
 
-   // const stripeConnected =
-    //  currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id;
+    const stripeConnected =
+      currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id;
 
-   // const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
+    const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
 
-   // const requirementsMissing =
-    //  stripeAccount &&
-    //  (hasRequirements(stripeAccountData, 'past_due') ||
-    //    hasRequirements(stripeAccountData, 'currently_due'));
+    const requirementsMissing =
+      stripeAccount &&
+      (hasRequirements(stripeAccountData, 'past_due') ||
+        hasRequirements(stripeAccountData, 'currently_due'));
 
-   // if (stripeConnected && !requirementsMissing) {
-   //   onPublishListingDraft(id);
-   // } else {
-    //  this.setState({
-    //    draftId: id,
-     //   showPayoutDetails: true,
-     // });
-   // }
- // }
+    if (stripeConnected && !requirementsMissing) {
+      onPublishListingDraft(id);
+    } else {
+      this.setState({
+        draftId: id,
+        showPayoutDetails: true,
+      });
+    }
+  }
 
   handlePayoutModalClose() {
     this.setState({ showPayoutDetails: false });
@@ -502,7 +501,7 @@ EditListingWizard.propTypes = {
       publicData: object,
       description: string,
       geolocation: object,
-   //   pricing: object,
+      pricing: object,
       title: string,
     }),
     images: array,

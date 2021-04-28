@@ -14,7 +14,7 @@
   padding: 0 12px 0 0;
 
   /* fill */
-  background-color: var(--marketplaceColorDark);
+  background-color: var(--matterColorLight);
 
   /* shadows */
   box-shadow: var(--boxShadowLight);
@@ -55,7 +55,7 @@
   margin-right: 24px;
   border-left-style: solid;
   border-left-width: 1px;
-  border-left-color: var(--marketplaceColorDark);
+  border-left-color: var(--matterColorNegative);
 
   @media (--viewportLarge) {
     padding-left: 0;
@@ -65,7 +65,7 @@
 .search {
   @apply --marketplaceH4FontStyles;
   @apply --TopbarDesktop_label;
-  color: var(--marketplaceColorDark);
+  color: var(--matterColor);
 }
 
 .topbarSearchWithLeftPadding {
@@ -213,7 +213,7 @@
   height: 100%;
   padding: 0 12px 0 12px;
 
-  color: var(--matterColorLight);
+  color: var(--matterColor);
 
   &:hover {
     color: var(--matterColorDark);
@@ -224,7 +224,6 @@
 .login {
   @apply --marketplaceH5FontStyles;
   @apply --TopbarDesktop_label;
-  color: var(--matterColorLight);
 }
 
 /* left animated "border" like hover element */

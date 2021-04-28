@@ -17,15 +17,15 @@
 :root {
   /* ================ Colors ================ */
 
-  --marketplaceColor: #487B94;
-  --marketplaceColorLight: #A1C3E1;
-  --marketplaceColorDark: #262524;
+  --marketplaceColor: #c0392b;
+  --marketplaceColorLight: #ff4c38;
+  --marketplaceColorDark: #8c291e;
 
   /* Used with inline CSS SVGs */
   --marketplaceColorEncoded: %23c0392b;
 
-  --successColor: #E6C045;
-  --successColorDark: #a78c33;
+  --successColor: #2ecc71;
+  --successColorDark: #239954;
   --successColorLight: #f0fff6;
   --failColor: #ff0000;
   --failColorLight: #fff0f0;
@@ -34,7 +34,7 @@
   --bannedColorLight: var(--marketplaceColorLight);
   --bannedColorDark: var(--marketplaceColor);
 
-  --matterColorDark: #262524;
+  --matterColorDark: #000000;
   --matterColor: #4a4a4a;
   --matterColorAnti: #b2b2b2;
   --matterColorNegative: #e7e7e7;

@@ -102,8 +102,8 @@ const Footer = props => {
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="Northvoltpage" to={{ hash: '#Northvolt' }} className={css.link}>
-                    <FormattedMessage id="Northvolt" />
+                  <NamedLink name="AboutPage" to={{ hash: '#contact' }} className={css.link}>
+                    <FormattedMessage id="Footer.toContactPage" />
                   </NamedLink>
                 </li>
               </ul>
