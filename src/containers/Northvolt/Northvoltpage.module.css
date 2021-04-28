@@ -147,7 +147,7 @@ button1 {
 
 @media only screen and (min-width: 600px) {
   .bannertext {
-    padding-top: 400px;
+    padding-top: 200px;
 
   }
 }
@@ -172,7 +172,8 @@ button1 {
 @media only screen and (max-width: 600px) {
 
   .ColumnContainerBanner {
-    padding-top: 600px;
+    padding-top: 425px;
+  
   }
 }
 
@@ -330,7 +331,8 @@ transition: .1s linear;
 }
   
 th {
-  font-size: 35px;
+  font-size: 37px;
+  line-height: 50px;
 }
 
 .TwoColumns {
