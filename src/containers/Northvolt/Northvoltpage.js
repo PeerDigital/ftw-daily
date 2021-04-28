@@ -24,6 +24,13 @@ import TomteboStrand from './images/TomteboStrand.png';
 
 
 
+
+
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 const NorthvoltPage = () => {
   return (
     
@@ -86,7 +93,7 @@ const NorthvoltPage = () => {
               <div class="container" className={css.ProjectData}>
               <table id="details">
                 <tr>
-                <th colspan="2">Tomtebo Strand</th>
+                <th colspan="2">Projektdetaljer</th>
              
                 </tr>
                 <tr>
@@ -129,12 +136,19 @@ const NorthvoltPage = () => {
                    </div>
                    </div> 
   
-          <div class="column" clasName={css.Columncontact}>
-          
-          <h3north>Kontakt</h3north> 
-          <p>Namn Efternamn</p>
-          <p>namn@företag.se</p>
-          <p>073 XXX XX XX</p>
+          <div class="column" clasName={css.TwoColumnscontact}>
+        
+
+          <div class="container" className={css.contactinformation}>
+          <tr><h3north>Kontakt</h3north></tr> 
+          <p><tr>Namn Efternamn</tr>
+
+          <tr>Namn@företag.se</tr>
+
+          <tr>073 XXX XX XX</tr> </p>
+
+          </div>
+    
           </div>
         </div>
         </div>
