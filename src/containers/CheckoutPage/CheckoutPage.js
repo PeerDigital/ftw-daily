@@ -33,7 +33,6 @@ import { formatMoney } from '../../util/currency';
 import { TRANSITION_ENQUIRE, txIsPaymentPending, txIsPaymentExpired } from '../../util/transaction';
 import {
   AvatarMedium,
-  BookingBreakdown,
   Logo,
   NamedLink,
   NamedRedirect,
@@ -44,6 +43,8 @@ import { StripePaymentForm } from '../../forms';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { confirmCardPayment, retrievePaymentIntent } from '../../ducks/stripe.duck';
 import { savePaymentMethod } from '../../ducks/paymentMethods.duck';
+
+import { Form as FinalForm } from 'react-final-form';
 
 import {
   initiateOrder,
@@ -76,6 +77,46 @@ const paymentFlow = (selectedPaymentMethod, saveAfterOnetimePayment) => {
     ? PAY_AND_SAVE_FOR_LATER_USE
     : ONETIME_PAYMENT;
 };
+
+const bookingForm = (
+  <FinalForm
+    onSubmit={values => this.handleSubmit(values)}
+    render={fieldRenderProps => {
+      const { handleSubmit } = fieldRenderProps;
+      return (
+        <Form onSubmit={handleSubmit}>
+          {showInitialMessageInput ? (
+            <div>
+              <h3 className={css.messageHeading}>
+                <FormattedMessage id="StripePaymentForm.messageHeading" />
+              </h3>
+
+              <FieldTextInput
+                type="textarea"
+                id={`bookingForm-message`}
+                name="initialMessage"
+                label={initialMessageLabel}
+                placeholder={messagePlaceholder}
+                className={css.message}
+              />
+            </div>
+          ) : null}
+          <div className={css.submitContainer}>
+            <PrimaryButton
+              className={css.submitButton}
+              type="submit"
+              inProgress={this.state.submitting}
+              disabled={false}
+            >
+              Confirm booking
+            </PrimaryButton>
+          </div>
+        </Form>
+      );
+    }}
+  />
+);
+
 
 const initializeOrderPage = (initialValues, routes, dispatch) => {
   const OrderPage = findRouteByRouteName('OrderDetailsPage', routes);
@@ -389,77 +430,49 @@ export class CheckoutPageComponent extends Component {
     if (this.state.submitting) {
       return;
     }
+
     this.setState({ submitting: true });
 
-    const { history, speculatedTransaction, currentUser, paymentIntent, dispatch } = this.props;
-    const { card, message, paymentMethod, formValues } = values;
-    const {
-      name,
-      addressLine1,
-      addressLine2,
-      postal,
-      city,
-      state,
-      country,
-      saveAfterOnetimePayment,
-    } = formValues;
+    const initialMessage = values.initialMessage;
+    const { history, speculatedTransaction, dispatch, onInitiateOrder, onSendMessage } = this.props;
 
-    // Billing address is recommended.
-    // However, let's not assume that <StripePaymentAddress> data is among formValues.
-    // Read more about this from Stripe's docs
-    // https://stripe.com/docs/stripe-js/reference#stripe-handle-card-payment-no-element
-    const addressMaybe =
-      addressLine1 && postal
-        ? {
-            address: {
-              city: city,
-              country: country,
-              line1: addressLine1,
-              line2: addressLine2,
-              postal_code: postal,
-              state: state,
-            },
-          }
-        : {};
-    const billingDetails = {
-      name,
-      email: ensureCurrentUser(currentUser).attributes.email,
-      ...addressMaybe,
+    // Create order aka transaction
+    // NOTE: if unit type is line-item/units, quantity needs to be added.
+    // The way to pass it to checkout page is through pageData.bookingData
+    const requestParams = {
+      listingId: this.state.pageData.listing.id,
+      bookingStart: speculatedTransaction.booking.attributes.start,
+      bookingEnd: speculatedTransaction.booking.attributes.end,
     };
 
-    const requestPaymentParams = {
-      pageData: this.state.pageData,
-      speculatedTransaction,
-      stripe: this.stripe,
-      card,
-      billingDetails,
-      message,
-      paymentIntent,
-      selectedPaymentMethod: paymentMethod,
-      saveAfterOnetimePayment: !!saveAfterOnetimePayment,
-    };
+    const enquiredTransaction = this.state.pageData.enquiredTransaction;
+    const transactionIdMaybe = enquiredTransaction ? enquiredTransaction.id : null;
 
-    this.handlePaymentIntent(requestPaymentParams)
-      .then(res => {
-        const { orderId, messageSuccess, paymentMethodSaved } = res;
-        this.setState({ submitting: false });
+    onInitiateOrder(requestParams, transactionIdMaybe).then(params => {
+      onSendMessage({ ...params, message: initialMessage })
+        .then(values => {
+          const { orderId, messageSuccess } = values;
+          this.setState({ submitting: false });
+          const routes = routeConfiguration();
+          const OrderPage = findRouteByRouteName('OrderDetailsPage', routes);
 
-        const routes = routeConfiguration();
-        const initialMessageFailedToTransaction = messageSuccess ? null : orderId;
-        const orderDetailsPath = pathByRouteName('OrderDetailsPage', routes, { id: orderId.uuid });
-        const initialValues = {
-          initialMessageFailedToTransaction,
-          savePaymentMethodFailed: !paymentMethodSaved,
-        };
-
-        initializeOrderPage(initialValues, routes, dispatch);
-        clearData(STORAGE_KEY);
-        history.push(orderDetailsPath);
-      })
-      .catch(err => {
-        console.error(err);
-        this.setState({ submitting: false });
-      });
+          // Transaction is already created, but if the initial message
+          // sending failed, we tell it to the OrderDetailsPage.
+          dispatch(
+            OrderPage.setInitialValues({
+              initialMessageFailedToTransaction: messageSuccess ? null : orderId,
+            })
+          );
+          const orderDetailsPath = pathByRouteName('OrderDetailsPage', routes, {
+            id: orderId.uuid,
+          });
+          clearData(STORAGE_KEY);
+          history.push(orderDetailsPath);
+        })
+        .catch(() => {
+          this.setState({ submitting: false });
+        });
+    });
   }
 
   onStripeInitialized(stripe) {
@@ -583,17 +596,6 @@ export class CheckoutPageComponent extends Component {
     // (i.e. have an id)
     const tx = existingTransaction.booking ? existingTransaction : speculatedTransaction;
     const txBooking = ensureBooking(tx.booking);
-    const breakdown =
-      tx.id && txBooking.id ? (
-        <BookingBreakdown
-          className={css.bookingBreakdown}
-          userRole="customer"
-          unitType={config.bookingUnitType}
-          transaction={tx}
-          booking={txBooking}
-          dateType={DATE_TYPE_DATE}
-        />
-      ) : null;
 
     const isPaymentExpired = checkIsPaymentExpired(existingTransaction);
     const hasDefaultPaymentMethod = !!(
@@ -774,11 +776,6 @@ export class CheckoutPageComponent extends Component {
               </div>
             </div>
 
-            <div className={css.priceBreakdownContainer}>
-              {speculateTransactionErrorMessage}
-              {breakdown}
-            </div>
-
             <section className={css.paymentContainer}>
               {initiateOrderErrorMessage}
               {listingNotFoundErrorMessage}
@@ -791,7 +788,7 @@ export class CheckoutPageComponent extends Component {
                   />
                 </p>
               ) : null}
-              {showPaymentForm ? (
+              {bookingForm ? (
                 <StripePaymentForm
                   className={css.paymentForm}
                   onSubmit={this.handleSubmit}
@@ -841,7 +838,6 @@ export class CheckoutPageComponent extends Component {
               <p className={css.detailsSubtitle}>{detailsSubTitle}</p>
             </div>
             {speculateTransactionErrorMessage}
-            {breakdown}
           </div>
         </div>
       </Page>
@@ -962,6 +958,7 @@ const CheckoutPage = compose(
   ),
   injectIntl
 )(CheckoutPageComponent);
+
 
 CheckoutPage.setInitialValues = (initialValues, saveToSessionStorage = false) => {
   if (saveToSessionStorage) {
