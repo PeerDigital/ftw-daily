@@ -20,6 +20,8 @@ const Logo = props => {
 
 const { oneOf, string } = PropTypes;
 
+
+
 Logo.defaultProps = {
   className: null,
   format: 'desktop',
