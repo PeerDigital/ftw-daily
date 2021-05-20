@@ -12,7 +12,6 @@ import { Provider } from 'react-redux';
 import difference from 'lodash/difference';
 import mapValues from 'lodash/mapValues';
 import moment from 'moment';
-import 'moment/locale/se';
 import { IntlProvider } from './util/reactIntl';
 import configureStore from './store';
 import routeConfiguration from './routeConfiguration';
@@ -21,6 +20,8 @@ import config from './config';
 
 // Flex template application uses English translations as default.
 import defaultMessages from './translations/sv.json';
+
+import 'moment/locale/sv';
 
 // If you want to change the language, change the imports to match the wanted locale:
 //   1) Change the language in the config.js file!
